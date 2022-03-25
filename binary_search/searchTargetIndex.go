@@ -1,31 +1,25 @@
 package binary_search
 
-type Number interface {
-	int64 | float64
-}
-
-func searchTargetIndex[N Number](numbers []N, target N) N {
-	//1. 定义首尾变量
+func search(nums []int, target int) int {
+	// 1. 初始化 start 和 end
 	start := 0
-	end := len(numbers) - 1
-	//2. 定义循环条件，保证循环时至少有三个元素
+	end := len(nums) - 1
+	// 2. 循环退出条件
 	for start+1 < end {
-		//3. 定义中间变量并进行比较
-		mid := (start + end) / 2
-		if numbers[mid] == target {
-			return N(mid)
-		} else if numbers[mid] < target {
-			mid = start
+		middle := (start + end) / 2
+		if nums[middle] == target {
+			return middle
+		} else if nums[middle] < target {
+			start = middle
 		} else {
-			mid = end
+			end = middle
 		}
 	}
-	//4. 判断最后一个元素是否等于target
-	if numbers[start] == target {
-		return N(start)
+	if nums[start] == target {
+		return start
 	}
-	if numbers[end] == target {
-		return N(end)
+	if nums[end] == target {
+		return end
 	}
-	return N(-1)
+	return -1
 }
