@@ -16,6 +16,8 @@ func Test_mySqrt(t *testing.T) {
 		{"5", args{5}, 2},
 		{"10", args{10}, 3},
 		{"8", args{8}, 2},
+		{"2", args{2}, 1},
+		{"0", args{0}, 0},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

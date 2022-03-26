@@ -16,6 +16,7 @@ func searchInsert(nums []int, target int) int {
 			end = mid
 		}
 	}
+	// 4. 注意左右边界比较
 	if nums[start] >= target {
 		return start
 	}

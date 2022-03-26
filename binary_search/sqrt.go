@@ -1,6 +1,10 @@
 package binary_search
 
 func mySqrt(x int) int {
+	// 对非正整数进行拦截
+	if x <= 1 {
+		return x
+	}
 	// 1. 定义首尾变量
 	start := 1
 	end := x
@@ -16,6 +20,7 @@ func mySqrt(x int) int {
 			end = mid
 		}
 	}
+	// 4. 注意不是end则为start，不能返回-1
 	if end > x/end {
 		return start
 	}
