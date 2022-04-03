@@ -6,7 +6,7 @@ func searchInRotatedSortedArray(nums []int, target int) int {
 	end := len(nums) - 1
 	// 2. 定义循环退出条件，保证循环中至少有三个元素
 	for start+1 < end {
-		// 3. 将中间变量与target比较，注意左半段和右半段必然有一段连续
+		// 3. 将中间变量与target比较，注意左半段和右半段必然有一段连续，可以通过旋转点证明
 		mid := (start + end) / 2
 		if nums[mid] == target {
 			return mid
