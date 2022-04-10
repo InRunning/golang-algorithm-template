@@ -20,7 +20,7 @@ func search(nums []int, target int) bool {
 				start = mid
 			}
 		} else if nums[start] > nums[mid] { // 左半段不连续
-			// 3.2 不在左半段中间
+			// 3.2 不在左半段中间，即在旋转数组中间
 			if nums[mid] <= target && target < nums[start] {
 				start = mid
 			} else {
