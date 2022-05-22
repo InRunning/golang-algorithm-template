@@ -2,7 +2,7 @@ package quick_sort
 
 import stack2 "github.com/InRunning/golang-algorithm-template/stack"
 
-func quickSortIterative(nums []int) []int {
+func QuickSortIterative(nums []int) []int {
 	stack := stack2.NewStack()
 	// 将首尾索引放入栈中
 	stack.Push(0)
