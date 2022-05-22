@@ -1,6 +1,6 @@
-package find_minimum_in_rotated_sorted_array
+package _53_find_minimum_in_rotated_sorted_array
 
-func findMin(nums []int) int {
+func findMin[T int](nums []T) T {
 	// 1. 定义首尾变量
 	start := 0
 	end := len(nums) - 1
