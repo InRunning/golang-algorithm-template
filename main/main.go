@@ -19,13 +19,14 @@ func main() {
 	}
 
 	// Migrate the schema
-	err = db.AutoMigrate(&Employee{})
+	//err = db.AutoMigrate(&Employee{})
+	err = db.AutoMigrate(&Product{})
 	checkErr(err)
 
 	// 插入内容
-	name := "test"
-	db.Create(&Employee{Name: &name})
-	//db.Create(&Product{Title: "新款手机", Code: "D42", Price: 1000})
+	//name := "test"
+	//db.Create(&Employee{Name: &name})
+	db.Create(&Product{Title: "新款手机", Code: "D42", Price: 1000})
 	//db.Create(&Product{Title: "新款电脑", Code: "D43", Price: 3500})
 	//
 	//// 读取内容
