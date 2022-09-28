@@ -1,5 +1,7 @@
 package _4_find_first_and_last_position_of_element_in_sorted_array
 
+// 关键词：两次二分
+
 import "sync"
 
 func searchRange(nums []int, target int) []int {
@@ -18,7 +20,6 @@ func searchRange(nums []int, target int) []int {
 	return []int{start, end}
 }
 
-// search 两次二分，isFirst: 是否为首位置
 func search(nums []int, target int, isFirst bool) int {
 	start := 0
 	end := len(nums) - 1

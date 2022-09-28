@@ -1,5 +1,7 @@
 package _3_search_in_rotated_array
 
+// 关键词：有一边连续
+
 func search(nums []int, target int) int {
 	start := 0
 	end := len(nums) - 1
@@ -7,14 +9,14 @@ func search(nums []int, target int) int {
 		mid := (start + end) / 2
 		if nums[mid] == target {
 			return mid
-		} else if nums[start] < nums[mid] { // 左半边数组连续
-			if nums[start] <= target && nums[mid] >= target { // 目标在左边数组
+		} else if nums[start] < nums[mid] {
+			if nums[start] <= target && target <= nums[mid] {
 				end = mid
 			} else {
 				start = mid
 			}
-		} else { // 右半边数组连续
-			if nums[mid] <= target && nums[end] >= target {
+		} else {
+			if nums[mid] <= target && target <= nums[end] {
 				start = mid
 			} else {
 				end = mid
@@ -25,6 +27,7 @@ func search(nums []int, target int) int {
 		return start
 	} else if nums[end] == target {
 		return end
+	} else {
+		return -1
 	}
-	return -1
 }

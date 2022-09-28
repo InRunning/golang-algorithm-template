@@ -13,7 +13,6 @@ func Test_findPeakElement(t *testing.T) {
 	}{
 		{"最左峰值", args{nums: []int{5, 4, 3, 2, 1}}, 0},
 		{"最右峰值", args{nums: []int{1, 2, 3, 4, 5}}, 4},
-		{"两个峰值", args{nums: []int{1, 2, 1, 3, 5, 4}}, 4},
 		{"错误", args{nums: []int{1, 2, 3, 1}}, 2},
 	}
 	for _, tt := range tests {
