@@ -1,4 +1,4 @@
-package _4_edit_distance
+package _2_edit_distance
 
 import "testing"
 

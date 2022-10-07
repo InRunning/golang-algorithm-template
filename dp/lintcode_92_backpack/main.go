@@ -13,15 +13,16 @@ func BackPack(m int, a []int) int {
 	dp[0][0] = true
 	for i := 1; i <= len(a); i++ {
 		for j := 0; j <= m; j++ {
+			// 不放
 			dp[i][j] = dp[i-1][j]
-			if j-a[i-1] >= 0 && dp[i-1][j-a[i-1]] {
-				dp[i][j] = true
+			if j >= a[i-1] {
+				dp[i][j] = dp[i][j] || dp[i-1][j-a[i-1]]
 			}
 		}
 	}
-	for i := m; i >= 0; i-- {
-		if dp[len(a)][i] {
-			return i
+	for j := m; j >= 0; j-- {
+		if dp[len(a)][j] {
+			return j
 		}
 	}
 	return 0

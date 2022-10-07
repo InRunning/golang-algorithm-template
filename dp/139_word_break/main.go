@@ -17,7 +17,7 @@ func wordBreak(s string, wordDict []string) bool {
 
 func inDict(s string, wordDict []string) bool {
 	for i := 0; i < len(wordDict); i++ {
-		if s == wordDict[i] {
+		if wordDict[i] == s {
 			return true
 		}
 	}
