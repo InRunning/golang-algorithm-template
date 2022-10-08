@@ -9,17 +9,16 @@ type ListNode struct {
 
 func deleteDuplicates(head *ListNode) *ListNode {
 	if head == nil {
-		return head
+		return nil
 	}
 	dummy := &ListNode{Val: math.MinInt}
 	dummy.Next = head
 	head = dummy
-
 	var rmVal int
 	for head.Next != nil && head.Next.Next != nil {
 		if head.Next.Val == head.Next.Next.Val {
 			rmVal = head.Next.Val
-			for head.Next != nil && head.Next.Val == rmVal {
+			for head.Next.Val == rmVal {
 				head.Next = head.Next.Next
 			}
 		} else {
